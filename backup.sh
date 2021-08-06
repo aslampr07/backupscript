@@ -19,7 +19,7 @@ result_count=$(echo $folder_result | jq -M '. | length')
 if [ $result_count -eq 0 ];
 then
         echo "Folder doesn't exists"
-        folder_id=$(curl -s --request POST 'https://www.googleapis.com/drive/v3/files' --header "Authorization: Bearer $access_token" --header 'Content-Type: application/json' --data-raw '{"name": "Regal Backups","mimeType": "application/vnd.google-apps.folder"}' | jq -M -r '.id')
+        folder_id=$(curl -s --request POST 'https://www.googleapis.com/drive/v3/files' --header "Authorization: Bearer $access_token" --header 'Content-Type: application/json' --data-raw '{"name": "Aslam Backups","mimeType": "application/vnd.google-apps.folder"}' | jq -M -r '.id')
         echo "Folder Created: $folder_id"
 else
         folder_id=$(echo $folder_result | jq -M -r '.[0].id')
